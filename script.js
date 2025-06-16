@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         const username = document.getElementById('username').value.trim();
-        const emailInput = document.getElementById('email').value.trim();
-        const passwordInput = document.getElementById('password').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         let isValid = true;
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
             messages.push('Username must be at least 3 characters long.');
         }
 
-        if (!emailRegex.test(emailInput.value)) {
+        if (!emailRegex.test(email.value)) {
             emailError.textContent = 'Please enter a valid email address (must contain @ and .).';
             return;
         }
 
-        if (passwordInput.length < 8) {
+        if (password.length < 8) {
             isValid = false;
             messages.push('Password must be at least 8 characters long.');
         }
