@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const usernameInput = document.getElementById('username').value.trim();
+        const username = document.getElementById('username').value.trim();
         const emailInput = document.getElementById('email').value.trim();
         const passwordInput = document.getElementById('password').value.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let isValid = true;
         const messages = [];
 
-        if (usernameInput.length < 3) {
+        if (username.length < 3) {
             isValid = false;
             messages.push('Username must be at least 3 characters long.');
         }
